@@ -87,7 +87,7 @@ command Q q
 "
 " ----Nerd Tree
 " open console or switch to main view
-map <leader><leader> :NERDToggle<CR>
+map <leader><leader> :NERDTreeToggle<CR>
 " search for files
 map <leader>r :NERDTreeFind<CR>
 
