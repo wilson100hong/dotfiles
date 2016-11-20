@@ -28,41 +28,23 @@ set smartcase
 set incsearch
 set hlsearch
 
-" show whats been entered
-set showcmd
+" Don't show command to speed up
+set noshowcmd
+set nolazyredraw
 
 " color
 colorscheme OceanicNext
 set background=dark
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Plugins
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~
-filetype off
+" VimPlug https://github.com/junegunn/vim-plug
+call plug#begin('~/.config/nvim/plugged')
 
-autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#rc('~/.config/nvim/bundle')
-"call vundle#begin('~/.config/nvim/bundle')
-
-"Bundle 'gmarik/Vundle.vim'
-"Bundle 'kien/ctrlp.vim'
-
-"Plugin 'VundleVim/Vundle.vim'
-
-" Custom plugins...
-" Vundle
-Plugin 'gmarik/vundle'
-
-" Ctrl-P
-Plugin 'kien/ctrlp.vim'
-
-" NerdTree
-Plugin 'scrooloose/nerdtree.git'
-
-filetype plugin indent on
+call plug#end()
 
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,4 +77,3 @@ map <leader>r :NERDTreeFind<CR>
 " Status
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~
 set ruler
-set cursorline
